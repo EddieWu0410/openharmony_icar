@@ -1,0 +1,39 @@
+# 引入外部 GN 文件，包含一些公共的工具或设置
+import("//device/soc/artery/at32f4xx/util/util.gni")
+import("//device/soc/artery/at32f4xx/util/util.gni")
+# 定义一个名为 "HIHOPE-HH-SLHSP104" 的固件构建目标，表示为特定硬件（AT32F4 系列微控制器）构建固件
+at32f4xxx_firmware("HIHOPE-HH-SLHSP104") {
+  # 显式列出需要链接的库，这些库会在固件构建过程中被包含
+  explicit_libs = [
+    "bootstrap",
+    "broadcast",
+    #"hctest",
+    #"module_ActsUtilsFileTest",
+    #"module_ActsDfxFuncTest",
+    #"module_ActsHieventLiteTest",
+    #"module_ActsUpdaterFuncTest",
+    #"module_ActsBootstrapTest",
+    #"module_ActsParameterTest",
+    #"module_ActsSamgrTest",
+    #"module_ActsHuksHalFunctionTest"
+  ]
+  # 定义该固件的构建依赖项，表示构建过程中需要依赖的其他模块
+  deps = [ "//build/lite:ohos" ]
+       
+
+  # 添加额外的依赖项，增加了一个名为 "demo_group" 的示例组
+  # demo_group for slhsp104, see "demo:demo_group"
+  deps += [ "demo:demo_group" ]
+  # 再次显式列出需要链接的库，添加了 "helloworld" 库
+  explicit_libs += [
+    #  "led_demo",     #   "led_demo:led_demo",
+    #  "motor_demo",   #   "motor_demo:motor_demo",
+    #  "uart1_demo",
+    "uart1_handle_demo",
+    #  "uart7_demo",
+    # "car_beep_demo",
+    # "car_led_demo",
+    # "trace_demo",
+    # "hw_could_dmeo",
+  ]
+}

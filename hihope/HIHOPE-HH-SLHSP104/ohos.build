@@ -1,0 +1,10 @@
+{
+  "parts": {
+    "product_HIHOPE-HH-SLHSP104": {
+      "module_list": [
+        "//vendor/hihope/HIHOPE-HH-SLHSP104:HIHOPE-HH-SLHSP104"
+      ]
+    }
+  },
+  "subsystem": "product_HIHOPE-HH-SLHSP104"
+}

@@ -1,0 +1,54 @@
+{
+    "name": "@ohos/camera_sample_app",
+    "description": "Camera related samples.",
+    "version": "3.1",
+    "license": "Apache License 2.0",
+    "publishAs": "code-segment",
+    "segment": {
+        "destPath": "applications/sample/camera"
+    },
+    "dirs": {},
+    "scripts": {},
+    "component": {
+        "name": "camera_sample_app",
+        "subsystem": "applications",
+        "syscap": [],
+        "features": [],
+        "adapted_system_type": [
+            "small"
+        ],
+        "rom": "",
+        "ram": "",
+        "deps": {
+            "components": [
+                "ability_lite",
+                "bundle_framework_lite",
+                "surface_lite",
+                "ui_lite",
+                "graphic_utils_lite",
+                "kv_store",
+                "syspara_lite",
+                "camera_lite",
+                "media_lite",
+                "permission",
+                "samgr_lite",
+                "utils_base"
+            ],
+            "third_party": [
+                "bounds_checking_function",
+                "wpa_supplicant"
+            ]
+        },
+        "build": {
+            "sub_component": [
+                "//applications/sample/camera/launcher:launcher_hap",
+                "//applications/sample/camera/cameraApp:cameraApp_hap",
+                "//applications/sample/camera/setting:setting_hap",
+                "//applications/sample/camera/gallery:gallery_hap",
+                "//applications/sample/camera/media:media_sample"
+            ],
+            "inner_kits": [],
+            "test": []
+        }
+    }
+}

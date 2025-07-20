@@ -1,0 +1,56 @@
+static_library("uart1_handle_demo") {
+  sources = [
+    "usart1/usart1.c",
+    "usart1/protocol.c",
+    
+    "usart3/usart3.c",
+
+    "uart7_gps/uart7_gps.c",
+    
+    "uartcall/set_motor.c",
+    "uartcall/set_car_motion.c",
+    "uartcall/tracing.c",
+    "uartcall/beeping.c",
+    "uartcall/set_car_run.c",
+
+    "bsp/bsp_motor.c",
+    "bsp/bsp_encoder.c",
+    "bsp/bsp_tracing.c",
+
+    "app/app_pid.c",
+    "app/app_motion.c",
+    "app/app_mecanum.c",
+
+    "sensor/sensor.c",
+    "sensor/smoker_pm2.5_light.c",
+    "sensor/bme280.c",
+    "sensor/i2c_application.c",
+    "sensor/tem_hum.c",
+    
+    "bsp_beep/bsp_beep.c",
+    "main.c",
+  ]
+
+  deps=[
+    "//build/lite/config/component/cJSON:cjson_static", 
+  ]
+
+  include_dirs = [
+    "//third_party/jerryscript",#加入数学库
+    "//third_party/musl",#数学库
+    "//third_party/cJSON",#cJSON库
+    "//commonlibrary/utils_lite/include",
+    "//kernel/liteos_m/kal/cmsis",
+    "//base/iothardware/peripheral/interfaces/inner_api",
+    "//device/soc/artery/at32f4xx/liteos_m/include",
+    # 中断函数存放的路径
+    "//device/soc/artery/at32f4xx/liteos_m/src/main/main_usart",   
+    ".",
+    "./bsp",
+    "./app",
+    "./bsp_beep",
+    "./usart1",
+    "./usart3",
+    "./uartcall",
+  ]
+}

@@ -1,0 +1,68 @@
+static_library("at32_car_19_IMU") {
+  sources = [
+    "main.c",
+   #BSP
+   "bsp/bsp_battery.c",
+   "bsp/bsp_beep.c",
+   "bsp/bsp_encoder.c",
+   "bsp/bsp_motor.c",
+  #  "bsp/bsp_robotic_arm.c",
+   "bsp/usart1.c",
+   "bsp/usart3.c",
+   "bsp/bsp_iic_soft.c",
+   "bsp/bsp_mpu9250.c",
+   "bsp/bsp_car_lights.c",
+  #  "bsp/bsp_timer14.c",
+  #CAR
+    #车灯
+    # "car/car_lights.c",
+  
+    #电池信息
+    "battery/battery_info.c",
+    #小车循迹
+    "bsp/bsp_tracing.c",
+    #app
+    "app/protocol.c",
+    "app/app_pid.c",
+    "app/app_motion.c",
+    "app/app_mecanum.c",
+    "app/app_math.c",
+    "app/app_angle.c",
+
+
+  
+    
+    
+   
+  ]
+
+  #添加cjson三方库依赖      
+  deps = [
+    "//build/lite/config/component/cJSON:cjson_static", 
+  ]
+
+  include_dirs = [
+    # OHOS 3.2-Release/4.0-Release
+    "//third_party/cJSON/", # cJson解析三方库
+    "//third_party/jerryscript",#加入数学库
+    "//third_party/musl",#数学库
+    "//commonlibrary/utils_lite/include",
+    "//kernel/liteos_m/kal/cmsis",
+    "//base/iothardware/peripheral/interfaces/inner_api",
+    "//device/soc/artery/at32f4xx/liteos_m/include",
+    
+    # 中断函数存放的路径
+    "//device/soc/artery/at32f4xx/liteos_m/src/main/main_usart", 
+
+    
+    ".",
+    "./bsp",
+    "./sensor",
+    "./battery",
+    "./app",
+   
+   
+  ]
+
+
+}

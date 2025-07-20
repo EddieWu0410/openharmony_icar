@@ -1,0 +1,14 @@
+static_library("tcp_server_demo") {
+    sources = [                
+        "tcp_server_demo.c",
+        "wifi/wifi_connect.c",   
+    ]
+    include_dirs = [
+
+        "//foundation/communication/wifi_lite/interfaces/wifiservice",
+        "./wifi",
+        "//third_party/cJSON/",
+        "//applications/sample/wifi-iot/app/D4_iot_tcp_server/wifi",
+        "//third_party/lwip/src/include/lwip",
+         ]
+}

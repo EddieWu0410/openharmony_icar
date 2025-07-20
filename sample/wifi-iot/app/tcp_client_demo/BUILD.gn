@@ -1,0 +1,19 @@
+static_library("tcp_client_demo") {
+    sources = [
+        "tcp_client_demo.c",
+        "wifi/wifi_connect.c",
+    ]
+    
+    cflags = [ "-Wno-unused-variable" ]
+    include_dirs = [
+        "//foundation/communication/wifi_lite/interfaces/wifiservice",
+        "./wifi",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//kernel/liteos_m/components/net/lwip-2.1/porting/include/lwip",
+        
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+    ]
+}

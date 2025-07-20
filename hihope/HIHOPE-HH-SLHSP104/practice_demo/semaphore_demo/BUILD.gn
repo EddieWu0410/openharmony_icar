@@ -1,0 +1,10 @@
+static_library("semaphore_demo") {
+  sources = [
+    "semp.c"
+  ]
+
+  include_dirs = [
+    "//commonlibrary/utils_lite/include",
+    "//kernel/liteos_m/kal/cmsis",
+  ]
+}

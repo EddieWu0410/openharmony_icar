@@ -1,0 +1,10 @@
+static_library("message_demo") {
+  sources = [
+    "message.c"
+  ]
+
+  include_dirs = [
+    "//commonlibrary/utils_lite/include",
+    "//kernel/liteos_m/kal/cmsis",
+  ]
+}

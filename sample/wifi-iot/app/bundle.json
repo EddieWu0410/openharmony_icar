@@ -1,0 +1,36 @@
+{
+    "name": "@ohos/wifi_iot_sample_app",
+    "description": "Wifi iot samples.",
+    "version": "3.1",
+    "license": "Apache License 2.0",
+    "publishAs": "code-segment",
+    "segment": {
+        "destPath": "applications/sample/wifi-iot/app"
+    },
+    "dirs": {},
+    "scripts": {},
+    "component": {
+        "name": "wifi_iot_sample_app",
+        "subsystem": "applications",
+        "syscap": [],
+        "features": [],
+        "adapted_system_type": [
+            "mini"
+        ],
+        "rom": "",
+        "ram": "",
+        "deps": {
+            "components": [
+                "c_utils"
+            ],
+            "third_party": []
+        },
+        "build": {
+            "sub_component": [
+                "//applications/sample/wifi-iot/app:app"
+            ],
+            "inner_kits": [],
+            "test": []
+        }
+    }
+}

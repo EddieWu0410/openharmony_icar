@@ -1,0 +1,16 @@
+import("//build/lite/config/component/lite_component.gni")
+
+lite_component("demo_group") {
+  features = [
+    # "car_beep_demo:car_beep_demo",
+    # "led_demo:led_demo",
+    # "motor_demo:motor_demo",
+    # "uart7_demo:uart7_demo",
+    # "uart1_demo:uart1_demo",
+    # "car_led_demo:car_led_demo",
+    # "icar:at32_car_19_IMU"
+    "all_my_car_down:uart1_handle_demo",
+    # "trace_demo:trace_demo",
+    # "hw_could_dmeo:hw_could_dmeo",
+  ]
+}

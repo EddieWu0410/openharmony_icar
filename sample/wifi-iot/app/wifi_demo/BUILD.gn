@@ -1,0 +1,18 @@
+# 静态库
+static_library("wifi_demo") {
+    sources = [
+       "wifi_connect.c",
+       "main.c"
+    ]
+
+    include_dirs = [
+
+        "//utils/native/lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include",
+        "//foundation/communication/wifi_lite/interfaces/wifiservice",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/components/net/lwip-2.1/porting/include/lwip",
+    ]
+}

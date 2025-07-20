@@ -1,0 +1,21 @@
+static_library("at32_wifi") {
+
+  # 指定要编译的程序文件
+  sources = [
+    "main.c",
+  ]
+
+  # 设置头文件路径
+  include_dirs = [
+    "//third_party/cJSON",
+    "//utils/native/lite/include",
+    "//kernel/liteos_m/kal/cmsis",
+    "//base/iot_hardware/peripheral/interfaces/kits",
+    "//base/iothardware/peripheral/interfaces/inner_api",
+    "//applications/sample/wifi-iot/library/third_party/paho_mqtt/MQTTClient-C/src",        # MQTTClient-C模块接口
+    "//applications/sample/wifi-iot/library/third_party/paho_mqtt/MQTTClient-C/src/liteOS",   # MQTTClient-C模块接口
+    "//applications/sample/wifi-iot/library/third_party/paho_mqtt/MQTTPacket/src",          # MQTTPacket模块接口
+    "//foundation/communication/wifi_lite/interfaces/wifiservice",          # HAL接口中的WiFi接口
+    "//applications/sample/wifi-iot/library/easy_wifi/src",                 # EasyWiFi模块接口
+  ]
+}

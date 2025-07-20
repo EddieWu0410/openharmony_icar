@@ -1,0 +1,39 @@
+{
+    "name": "@ohos/wifi_iot_sample_app",
+    "description": "Samples of wifi_iot",
+    "homePage":"https://gitee.com/openharmony",
+    "version": "4.0.2",
+    "license": "Apache License 2.0",
+    "repository":"https://gitee.com/openharmony/applications_sample_wifi_iot",
+    "supplier": "Organization: OpenHarmony",
+    "publishAs": "code-segment",
+    "segment": {
+        "destPath": "applications/sample/wifi-iot"
+    },
+    "dirs": {},
+    "scripts": {},
+    "component": {
+        "name": "wifi_iot_sample_app",
+        "subsystem": "applications",
+        "syscap": [],
+        "features": [],
+        "adapted_system_type": ["mini"],
+        "rom": "0KB",
+        "ram": "0KB",
+        "deps": {
+            "components": [
+	    	"utils_lite",
+            	"liteos_m",
+            	"peripheral",
+            	"acts",
+            	"samgr_lite"
+	    ],
+            "third_party": []
+        },
+        "build": {
+            "sub_component": [],
+            "inner_kits": [],
+            "test": []
+        }
+    }
+}

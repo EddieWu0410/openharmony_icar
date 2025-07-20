@@ -1,0 +1,95 @@
+{
+  "product_name": "HIHOPE-HH-SLHSP104",
+  "ohos_version": "OpenHarmony 3.2",
+  "type":"mini",
+  "version": "3.0",
+  "device_company": "hihope",
+  "board": "slhsp104",
+  "kernel_type": "liteos_m",
+  "kernel_version": "3.0.0",
+  "subsystems": [
+    {
+      "subsystem": "kernel",
+      "components": [
+        { "component": "liteos_m", "features": [] }
+      ]
+    },
+    {
+      "subsystem": "commonlibrary",
+      "components": [
+        { "component": "utils_lite", "features":[ "utils_lite_feature_file = true" ] }
+      ]
+    },
+    {
+      "subsystem": "developtools",
+        "components": [
+          { "component": "syscap_codec", "features":[] }
+        ]
+    },
+    {
+      "subsystem": "hiviewdfx",
+      "components": [
+        { "component": "hilog_lite", "features":[] },
+        { "component": "hievent_lite", "features":[] }
+      ]
+    },
+    {
+      "subsystem": "security",
+      "components": [
+        { "component": "device_auth", "features":[] },
+        { "component": "huks", "features":
+          [
+            "disable_huks_binary = false",
+            "disable_authenticate = false",
+            "huks_use_lite_storage = true",
+            "huks_use_hardware_root_key = true",
+            "huks_config_file = \"hks_config_lite.h\"",
+            "ohos_security_huks_mbedtls_porting_path = \"//device/soc/hisilicon/hi3861v100/sdk_liteos/third_party/mbedtls\""
+          ]
+        }
+      ]
+    },
+    {
+      "subsystem": "systemabilitymgr",
+      "components": [
+        { "component": "samgr_lite", "features":[] }
+      ]
+    },
+    {
+      "subsystem": "startup",
+      "components": [
+        { "component": "bootstrap_lite", "features":[] },
+        {
+          "component": "init",
+          "features": [
+            "enable_ohos_startup_init_lite_use_posix_file_api = true",
+            "enable_ohos_startup_init_feature_begetctl_liteos = true",
+            "config_ohos_startup_init_lite_data_path = \"/data/\"",
+            "enable_ohos_startup_init_feature_begetctl_liteos = true"
+          ]
+        }
+      ]
+    },
+    {
+      "subsystem": "updater",
+      "components": [
+        { "component": "sys_installer_lite", "features":[] }
+      ]
+    },
+    {
+      "subsystem": "xts",
+      "components": [
+        { "component": "acts", "features":
+          [
+            "enable_ohos_test_xts_acts_use_thirdparty_lwip = false"
+          ]
+        },
+        { "component": "tools", "features":[] },
+        { "component": "device_attest_lite", "features":[] }
+      ]
+    }
+  ],
+  "vendor_adapter_dir": "//device/soc/artery",
+  "third_party_dir": "//third_party",
+  "product_adapter_dir": "//vendor/hihope/HIHOPE-HH-SLHSP104/hals"
+}
